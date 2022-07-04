@@ -1,0 +1,21 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.social {
+  a {
+    color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: $gap;
+    line-height: 40px;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}

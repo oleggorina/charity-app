@@ -1,0 +1,14 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+p {
+  font-style: $font-header;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: gray;
+}

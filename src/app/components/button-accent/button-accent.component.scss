@@ -1,0 +1,18 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+
+.button__accent {
+  font-family: $font-header;
+  font-weight: 300;
+  font-size: 1.25em;
+  padding: 10px;
+  background: $color-accent;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  &:hover {
+    cursor: pointer;
+  }
+}

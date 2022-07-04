@@ -1,0 +1,75 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.card {
+  display: grid;
+  grid-template-areas: "header" "content";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.75fr 2fr;
+  background: $color-light;
+  gap: $gap;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  height: 500px;
+  border-radius: $gap;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: $gap;
+  @include lg {
+    margin: 0;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  &__header {
+    grid-area: header;
+    &.accent {
+      background: $color-accent;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    &.purple {
+      background: #bb02ff;
+      color: $color-light;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    }
+    &-title {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      h5 {
+        font-family: $font-header;
+        font-size: 2em;
+      }
+    }
+  }
+  &__content {
+    grid-area: content;
+    padding: $gap;
+    text-align: center;
+    &-title {
+      font-family: $font-header;
+      font-size: 2em;
+    }
+    &-text {
+      font-family: $font-main;
+    }
+    &-button {
+      font-family: $font-header;
+      padding: 10px 20px;
+      border-radius: $gap * 2;
+      display: inline-block;
+      margin: $gap;
+      cursor: pointer;
+      &.accent {
+        background: $color-accent;
+        color: black;
+      }
+      &.purple {
+        background: #bb02ff;
+        color: $color-light;
+      }
+    }
+  }
+}

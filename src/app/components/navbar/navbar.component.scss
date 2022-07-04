@@ -1,0 +1,38 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $gap;
+  &__logo {
+    font-size: 2em;
+    font-family: $font-header;
+    font-weight: 900;
+    span {
+      font-weight: 100;
+    }
+    @include sm {
+      font-size: 1.5em;
+    }
+  }
+  &__menu {
+    display: flex;
+    gap: $gap;
+    align-items: center;
+    &-item {
+      font-family: $font-header;
+      font-weight: 700;
+      font-size: 1em;
+      &:hover {
+        cursor: pointer;
+      }
+      @include lg {
+        display: none;
+      }
+    }
+  }
+}

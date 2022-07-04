@@ -1,0 +1,69 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.news {
+  height: 100%;
+  display: grid;
+  grid-template-areas: "title" "card";
+  align-items: center;
+
+  @include md {
+    margin-top: $gap;
+  }
+  &__title {
+    grid-area: title;
+    text-align: end;
+    justify-self: end;
+    h2 {
+      font-size: 4em;
+      font-family: $font-header;
+      font-weight: 300;
+      span {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          bottom: -20%;
+          left: 0;
+          z-index: -2;
+          background-image: url(../../../../../../assets/images/yellow_layer.svg);
+          background-repeat: no-repeat;
+          @include xl {
+            bottom: -15%;
+          }
+          @include lg {
+            bottom: -5%;
+          }
+        }
+      }
+      @include xl {
+        font-size: 3.5em;
+      }
+      @include lg {
+        font-size: 3em;
+      }
+    }
+  }
+  &__card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $gap;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      margin-top: $gap;
+      margin-bottom: $gap;
+    }
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,51 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.slider {
+  display: grid;
+  grid-template-areas: "header" "cards" "indicators";
+  gap: $gap;
+  transition: all 0.3s;
+  &__header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas: "title controls";
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    &-title {
+      grid-area: title;
+      text-align: left;
+      width: 800px;
+    }
+    &-controls {
+      grid-area: controls;
+      justify-self: end;
+      display: flex;
+      gap: $gap;
+      font-size: 3em;
+      cursor: pointer;
+    }
+  }
+  &__cards {
+    grid-area: cards;
+    position: relative;
+    max-width: 1360px;
+    height: 550px;
+    transition: all 0.3s;
+    .wrapper {
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: $gap * 2;
+      margin-right: $gap * 2;
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+  }
+}

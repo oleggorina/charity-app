@@ -1,0 +1,88 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.cards {
+  display: flex;
+  gap: $gap * 3.5;
+  .card {
+    position: relative;
+    display: grid;
+    grid-template-areas: "image" "content" "city" "text";
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-radius: $gap;
+    padding: $gap;
+    width: 350px;
+    transition: all 0.5s;
+    gap: $gap;
+    margin-right: $gap;
+    margin-left: $gap;
+    background-color: $color-light;
+    text-align: center;
+    border: 5px solid $color-accent;
+    opacity: 0;
+    @keyframes anim {
+      
+    }
+    // &:nth-child(2) {
+    //   transform: scale(1.1);
+    // }
+    @include xl {
+      width: 300px;
+    }
+    @include lg {
+      width: 100%;
+    }
+    &__image {
+      grid-area: image;
+      img {
+        border-radius: 50%;
+        display: block;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border: 5px solid $color-accent;
+        margin: $gap auto;
+        @include lg {
+          width: 180px;
+          height: 180px;
+        }
+        @include md {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+    &__content {
+      grid-area: content;
+      font-family: $font-main;
+      font-style: italic;
+    }
+    &__city {
+      grid-area: city;
+      font-family: $font-header;
+      font-weight: 500;
+      font-size: 1.125em;
+    }
+    &__text {
+      grid-area: text;
+      font-family: $font-header;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    &__symbol {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: $color-accent;
+      border-radius: $gap / 2;
+      top: -5%;
+      left: 10%;
+      p {
+        color: black;
+        font-size: 5em;
+      }
+    }
+  }
+}

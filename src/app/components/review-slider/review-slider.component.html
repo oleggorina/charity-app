@@ -1,0 +1,16 @@
+<div class="slider">
+  <div class="slider__header">
+    <div class="slider__header-title">
+      <app-title [text]="'We are always where others'" [word]="'need help.'"></app-title>
+    </div>
+    <div class="slider__header-controls">
+      <span class="left" (click)="prev()"><i class="fa-solid fa-circle-arrow-left"></i></span>
+      <span class="right" (click)="next()"><i class="fa-solid fa-circle-arrow-right"></i></span>
+    </div>
+  </div>
+  <div class="slider__cards" #cards>
+    <div class="wrapper">
+      <app-review-card></app-review-card>
+    </div>
+  </div>
+</div>

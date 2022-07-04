@@ -1,0 +1,23 @@
+<div class="home">
+  <!-- <app-navbar></app-navbar> -->
+  <div class="home__header" #header>
+    <div class="home__header-title">
+      <h1 #title>Lorem ipsum dolor sit amet, consectetur <span>adipiscing</span> elit.
+        Integer ante nibh, feugiat sit amet luctus.</h1>
+        <div class="home__header-title--buttons">
+          <app-button-accent [accentName]="'Donate'"></app-button-accent>
+          <app-button-primary [primaryName]="'About us'"></app-button-primary>
+        </div>
+    </div>
+    <div class="home__header-image" #image>
+      <img src="../../../../assets/images/header__image.svg" alt="header__image">
+    </div>
+    <div class="home__header-footer">
+      <div class="home__header-footer--social">
+        <app-social-icon [socialClass]="'fab fa-facebook-f'" [socialIconClass]="'social__facebook'" [socialName]="'Facebook'"></app-social-icon>
+        <app-social-icon [socialClass]="'fab fa-instagram'" [socialIconClass]="'social__instagram'" [socialName]="'Instagram'"></app-social-icon>
+      </div>
+      <app-statistic [statisticCount]="'200'" [statisticEllipse]="'../../../assets/images/ellipse.svg'" [statisticText]="'children died in war of Russia against Ukraine'"></app-statistic>
+    </div>
+  </div>
+</div>

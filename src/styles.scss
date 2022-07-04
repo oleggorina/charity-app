@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // overflow: hidden;
+  // &::-webkit-scrollbar {
+  //   width: 0.5vw;
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: $color-accent;
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+  // }
+  // &::-webkit-scrollbar-track {
+  //   background-color: transparent;
+  // }
+}
+
+body {
+  font-size: $font-size;
+  background: #edf0f5;
+  font-size: $font-size;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.container {
+  @extend %container;
+}
+
+.wrapper {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+  @include lg {
+    height: 100%;
+  }
+  &::-webkit-scrollbar {
+    width: 0.5vw;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-accent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+section {
+  @include lg-min {
+    height: calc(100vh - 100px);
+    scroll-snap-align: start;
+  }
+}
+

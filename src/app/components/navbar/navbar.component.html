@@ -1,0 +1,14 @@
+<div class="navbar">
+  <a routerLink="/home" class="navbar__logo" #logo>Charity<span>logo</span></a>
+  <div class="navbar__menu" #menu>
+    <div class="navbar__menu-item" routerLink="/about-us">About Us</div>
+    <div class="navbar__menu-item" routerLink="/projects">Our Projects</div>
+    <div class="navbar__menu-item" routerLink="/news">News</div>
+    <div class="navbar__menu-item" routerLink="/contacts">Contacts</div>
+    <div class="navbar__menu-button" routerLink="/donate">
+      <app-button-accent *ngIf="!isMobileLayout" [accentName]="'Donate'"></app-button-accent>
+    </div>
+  </div>
+  <app-burger *ngIf="isMobileLayout" #burger></app-burger>
+</div>
+

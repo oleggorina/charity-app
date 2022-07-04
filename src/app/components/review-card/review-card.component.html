@@ -1,0 +1,21 @@
+<div class="cards" #cards>
+  <div class="card" *ngFor="let cards of cardData">
+    <div class="card__image">
+      <img src="{{cards.image}}" alt="">
+    </div>
+    <div class="card__content">
+      <p>
+        {{cards.text}}
+      </p>
+    </div>
+    <div class="card__city">
+      <p>{{cards.location}}</p>
+    </div>
+    <div class="card__text">
+      <span>{{cards.name}}</span>
+    </div>
+    <div class="card__symbol">
+      <p>”</p>
+    </div>
+  </div>
+</div>

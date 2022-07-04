@@ -1,0 +1,32 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.team {
+  display: grid;
+  grid-template-areas: "title" "card";
+  height: 100%;
+  &__title {
+    grid-area: title;
+    text-align: center;
+  }
+  &__card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $gap;
+    justify-items: center;
+    // margin-top: $gap;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}

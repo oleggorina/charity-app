@@ -1,0 +1,12 @@
+<section class="burger" #burger>
+  <div class="burger__icon" [ngClass]="{'burger__icon-active': isClicked}"
+  (click)="onClick($event)">
+    <span></span>
+  </div>
+  <ul *ngIf="isClicked" class="burger__list">
+    <a routerLink="/about" routerLinkActive="active" class="burger__list-item">О нас</a>
+    <a routerLink="/projects" routerLinkActive="active" class="burger__list-item">Наши проекты</a>
+    <a routerLink="/news" routerLinkActive="active" class="burger__list-item">Новости</a>
+    <a routerLink="/contacts" routerLinkActive="active" class="burger__list-item">Контакты</a>
+  </ul>
+</section>

@@ -1,0 +1,102 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.home {
+  display: grid;
+  align-items: center;
+  padding: $gap;
+  height: 100%;
+  @include fh {
+    max-width: $breakpoint1920;
+    margin: auto;
+    padding-right: $gap;
+    padding-left: $gap;
+  }
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title image" "footer footer";
+    gap: $gap;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    @include md {
+      margin-top: $gap * 4;
+      text-align: center;
+      grid-template-areas: "title title" "image image" "footer footer";
+    }
+    @include breakpoint376 {
+      margin-top: $gap * 2;
+    }
+    &-title {
+      grid-area: title;
+      align-self: center;
+      h1 {
+        font-family: $font-header;
+        font-size: 3em;
+        font-weight: 300;
+        span {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: -2;
+            background-image: url(../../../../../../assets/images/yellow_layer.svg);
+            background-repeat: no-repeat;
+          }
+        }
+        @include ul {
+          font-size: 2.5em;
+        }
+        @include xl {
+          font-size: 2.25em;
+        }
+        @include lg {
+          font-size: 2.125em;
+        }
+        @include md {
+          font-size: 1.85em;
+        }
+        @include sm {
+          font-size: 1.55em;
+        }
+      }
+      &--buttons {
+        display: flex;
+        gap: $gap;
+        margin-top: $gap;
+        @include md {
+          justify-content: center;
+        }
+      }
+    }
+    &-image {
+      grid-area: image;
+      align-self: center;
+      justify-self: center;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-footer {
+      grid-area: footer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include sm {
+        flex-direction: column;
+        justify-content: center;
+      }
+      &--social {
+        display: flex;
+      }
+    }
+  }
+}
