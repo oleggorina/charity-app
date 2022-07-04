@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { REVIEWCARD_DATA } from 'src/app/shared/review-card.const';
 import { IReviewCard } from 'src/app/shared/review-card.metadata';
 
@@ -11,6 +11,7 @@ export class ReviewCardComponent implements OnInit {
 
   cardData: IReviewCard[] = REVIEWCARD_DATA;
   @ViewChild('cards', {static: true}) cards!: ElementRef<HTMLDivElement>
+  @ViewChildren('card') card!: QueryList<ElementRef>;
   
   constructor(private renderer: Renderer2) { }
 

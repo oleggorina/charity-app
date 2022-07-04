@@ -31,98 +31,15 @@
   &__cards {
     grid-area: cards;
     position: relative;
+    display: flex;
     max-width: 1355px;
     height: 550px;
-    .wrapper {
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-left: $gap * 2;
-      margin-right: $gap * 2;
-      max-width: 100%;
-      height: 100%;
-      overflow: hidden;
-      transition: all 0.3s;
-      .cards {
-        display: flex;
-        gap: $gap * 2.5;
-        position: absolute;
-        left: 0;
-        transition: all 0.5s;
-        .card {
-          position: relative;
-          display: grid;
-          grid-template-areas: "image" "content" "city" "text";
-          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-          border-radius: $gap;
-          padding: $gap;
-          width: 350px;
-          gap: $gap;
-          margin-right: $gap;
-          margin-left: $gap;
-          background-color: $color-light;
-          text-align: center;
-          border: 5px solid $color-accent;
-          transition: all 0.5s;
-          @include xl {
-            width: 300px;
-          }
-          @include lg {
-            width: 100%;
-          }
-          &__image {
-            grid-area: image;
-            img {
-              border-radius: 50%;
-              display: block;
-              height: 100px;
-              width: 100px;
-              object-fit: cover;
-              border: 5px solid $color-accent;
-              margin: $gap auto;
-              @include lg {
-                width: 180px;
-                height: 180px;
-              }
-              @include md {
-                width: 150px;
-                height: 150px;
-              }
-            }
-          }
-          &__content {
-            grid-area: content;
-            font-family: $font-main;
-            font-style: italic;
-          }
-          &__city {
-            grid-area: city;
-            font-family: $font-header;
-            font-weight: 500;
-            font-size: 1.125em;
-          }
-          &__text {
-            grid-area: text;
-            font-family: $font-header;
-            font-weight: bold;
-            font-size: 1.5em;
-          }
-          &__symbol {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: $color-accent;
-            border-radius: $gap / 2;
-            top: -5%;
-            left: 10%;
-            p {
-              color: black;
-              font-size: 5em;
-            }
-          }
-        }
-      }
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
     }
   }
 }
