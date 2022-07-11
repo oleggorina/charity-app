@@ -30,16 +30,10 @@
   }
   &__cards {
     grid-area: cards;
-    position: relative;
-    display: flex;
-    max-width: 1355px;
-    height: 550px;
-    overflow: hidden;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
-    }
+    // position: relative;
+    // display: flex;
+    // max-width: 1355px;
+    // height: 550px;
+    // overflow: hidden;
   }
 }

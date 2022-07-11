@@ -3,11 +3,26 @@
 @use "mixins-media" as *;
 @use "skin" as *;
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 550px;
+  // width: 1410px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  // border: 1px solid black;
+  padding-right: $gap;
+  padding-left: $gap;
+}
+
 .cards {
   display: flex;
   position: absolute;
-  gap: $gap * 3.5;
-  margin: $gap;
+  transition: all 1s ease;
+  width: 100%;
+  gap: $gap * 6.5;
   .card {
     position: relative;
     display: grid;
@@ -15,21 +30,14 @@
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     border-radius: $gap;
     padding: $gap;
-    width: 350px;
+    min-width: 350px;
     gap: $gap;
-    margin-right: $gap;
-    margin-left: $gap;
+    // margin-right: $gap * 6;
     background-color: $color-light;
     text-align: center;
-    border: 5px solid $color-accent;
     transition: all 0.5s;
-    &.active {
-      animation: anim 1.5s forwards;
-      @keyframes anim {
-        to {
-          opacity: 1;
-        }
-      }
+    &:hover {
+      transform: translateY(-20px);
     }
     @include xl {
       width: 300px;
