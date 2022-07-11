@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TitleComponent } from './title/title.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
 import { ReviewSliderComponent } from './review-slider/review-slider.component';
+import { SliderControlComponent } from './slider-control/slider-control.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReviewSliderComponent } from './review-slider/review-slider.component';
     FooterComponent,
     TitleComponent,
     ReviewCardComponent,
-    ReviewSliderComponent
+    ReviewSliderComponent,
+    SliderControlComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { ReviewSliderComponent } from './review-slider/review-slider.component';
     FooterComponent,
     TitleComponent,
     ReviewCardComponent,
-    ReviewSliderComponent
+    ReviewSliderComponent,
+    SliderControlComponent
   ]
 })
 export class ComponentsModule { }

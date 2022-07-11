@@ -8,7 +8,6 @@ import { HomeProjectsComponent } from './components/home-projects/home-projects.
 import { HomeNewsComponent } from './components/home-news/home-news.component';
 import { HomeTeamComponent } from './components/home-team/home-team.component';
 import { HomeReviewsComponent } from './components/home-reviews/home-reviews.component';
-import { SliderItemDirective } from './components/home-reviews/slider-item.directive';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { SliderItemDirective } from './components/home-reviews/slider-item.direc
     HomeProjectsComponent,
     HomeNewsComponent,
     HomeTeamComponent,
-    HomeReviewsComponent,
-    SliderItemDirective
+    HomeReviewsComponent
   ],
   imports: [
     CommonModule,

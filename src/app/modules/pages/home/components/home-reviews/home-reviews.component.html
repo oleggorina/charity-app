@@ -4,11 +4,14 @@
       <app-title [text]="'We are always where others'" [word]="'need help.'"></app-title>
     </div>
     <div class="reviews__header-controls">
-      <span class="left" (click)="prev()"><i class="fa-solid fa-circle-arrow-left"></i></span>
-      <span class="right" (click)="next()"><i class="fa-solid fa-circle-arrow-right"></i></span>
+      <app-slider-control [buttonText]="'<'" (click)="prev()"></app-slider-control>
+      <app-slider-control [buttonText]="'>'" (click)="next()"></app-slider-control>
     </div>
   </div>
-  <div class="reviews__cards" #cardsContainer>
-    <app-review-card #sliderItem></app-review-card>
+  <div class="reviews__cards">
+    <app-review-card></app-review-card>
+  </div>
+  <div class="reviews__buttons">
+    <app-button-primary [primaryName]="'New review'"></app-button-primary>
   </div>
 </div>
