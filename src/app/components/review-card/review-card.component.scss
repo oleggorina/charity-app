@@ -7,14 +7,12 @@
   display: flex;
   align-items: center;
   height: 550px;
-  // width: 1410px;
-  width: 100%;
+  // width: 1370px;
   position: relative;
   overflow: hidden;
   margin: 0;
-  // border: 1px solid black;
-  padding-right: $gap;
-  padding-left: $gap;
+  // padding-right: $gap;
+  // padding-left: $gap;
 }
 
 .cards {
@@ -22,7 +20,7 @@
   position: absolute;
   transition: all 1s ease;
   width: 100%;
-  gap: $gap * 6.5;
+  gap: $gap * 4.75;
   .card {
     position: relative;
     display: grid;
@@ -32,7 +30,8 @@
     padding: $gap;
     min-width: 350px;
     gap: $gap;
-    // margin-right: $gap * 6;
+    margin-right: $gap;
+    margin-left: $gap;
     background-color: $color-light;
     text-align: center;
     transition: all 0.5s;
