@@ -14,10 +14,26 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
+    text-align: center;
+    @include sm {
+      grid-template-areas: "title" "controls";
+      gap: $gap;
+      grid-template-columns: 1fr;
+    }
     &-title {
       grid-area: title;
       text-align: left;
       width: 800px;
+      @include lg {
+        width: 600px;
+      }
+      @include md {
+        width: 400px;
+      }
+      @include sm {
+        width: 200px;
+        text-align: center;
+      }
     }
     &-controls {
       grid-area: controls;
@@ -26,10 +42,15 @@
       gap: $gap;
       font-size: 3em;
       cursor: pointer;
+      @include sm {
+        justify-self: center;
+      }
     }
   }
   &__cards {
     grid-area: cards;
+    display: flex;
+    justify-content: center;
   }
   &__buttons {
     display: flex;

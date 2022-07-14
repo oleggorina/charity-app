@@ -41,8 +41,6 @@ export class ReviewCardComponent implements OnInit, AfterViewInit {
   next(): void {
     if (this.offset != this.maxX) {
       this.offset -= this.containerWidth + this.cardMargin;
-      console.log(this.offset)
-      console.log(this.maxX)
       this.renderer.setStyle(this.cardsContainer.nativeElement, 'transform', `translateX(${this.offset}px)`);
     }
   }

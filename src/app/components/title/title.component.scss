@@ -34,5 +34,8 @@
     @include lg {
       font-size: 3em;
     }
+    @include sm {
+      font-size: 2em;
+    }
   }
 }

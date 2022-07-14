@@ -10,14 +10,40 @@
   position: relative;
   overflow: hidden;
   margin: 0;
+  @include ul-min {
+    width: 1360px;
+  }
+  @include ul-xl {
+    width: 1160px;
+  }
+  @include xl-lg {
+    width: 960px;
+  }
+  @include lg-md {
+    width: 640px;
+  }
+  @include md-sm {
+    width: 320px;
+  }
+  @include sm {
+    width: 270px;
+    height: 400px;
+  }
 }
 
 .cards {
   display: flex;
   position: absolute;
   transition: all 1s ease;
-  width: 100%;
-  gap: $gap * 4.75;
+  max-width: 100%;
+  gap: 0;
+  @include ul-min {
+    gap: $gap * 4.75;
+  }
+  @include ul-xl {
+    gap: $gap * 1.625;
+  }
+  
   .card {
     position: relative;
     display: grid;
@@ -32,15 +58,24 @@
     background-color: $color-light;
     text-align: center;
     transition: all 0.5s;
-    &:hover {
-      transform: translateY(-20px);
-    }
-    @include xl {
-      width: 300px;
+    @include ul-xl {
+      min-width: 325px;
     }
   
-    @include lg {
-      width: 100%;
+    @include xl {
+      min-width: 280px;
+    }
+    @include md-min {
+      &:hover {
+        transform: translateY(-20px);
+      }
+    }
+    @include sm {
+      min-width: 250px;
+      gap: $gap / 2;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      margin-right: $gap / 2;
+      margin-left: $gap / 2;
     }
   
     &__image {
@@ -52,17 +87,10 @@
         height: 100px;
         width: 100px;
         object-fit: cover;
-        border: 5px solid $color-accent;
         margin: $gap auto;
-  
-        @include lg {
-          width: 180px;
-          height: 180px;
-        }
-  
-        @include md {
-          width: 150px;
-          height: 150px;
+        @include sm {
+          height: 80px;
+          width: 80px;
         }
       }
     }
@@ -70,18 +98,27 @@
       grid-area: content;
       font-family: $font-main;
       font-style: italic;
+      @include sm {
+        font-size: 0.85em;
+      }
     }
     &__city {
       grid-area: city;
       font-family: $font-header;
       font-weight: 500;
       font-size: 1.125em;
+      @include sm {
+        font-size: 1em;
+      }
     }
     &__text {
       grid-area: text;
       font-family: $font-header;
       font-weight: bold;
       font-size: 1.5em;
+      @include sm {
+        font-size: 1.125em;
+      }
     }
     &__symbol {
       position: absolute;
